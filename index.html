@@ -6,6 +6,35 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header><h1>Rock Paper Scissors</h1></header>
+  <header>
+    <h1 class="important-text">Rock Paper Scissors</h1>
+  </header>
+
+  <main>
+    <div class="winner-display">
+      <h2 class="winner-display-text important-text">Rock, Paper, or Scissors?</h2>
+      <h3 class="reason-display muted-text">First to 5 wins the game!</h3>
+    </div>
+
+    <div class="result-boxes">
+
+      <div class="human-results">
+        <div class="human-result-box muted-text">?</div>
+        <p class="human-score muted-text">You: 0</p>
+      </div>
+
+      <div class="computer-results">
+        <div class="computer-result-box muted-text">?</div>
+        <p class=""></p>
+      </div>
+
+    </div>
+
+    <div class="choices">
+      <button class="choice-button rock-button">&#9994;</button>
+      <button class="choice-button paper-button">&#9995;</button>
+      <button class="choice-button scissors-button">&#9996;</button>
+    </div>
+  </main>
 </body>
 </html>
