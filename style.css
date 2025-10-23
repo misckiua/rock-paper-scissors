@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 :root {
   --bg-dark: hsl(17 49% 1%);
@@ -17,15 +17,42 @@
   --info: hsl(217 28% 65%);
 }
 
+* {
+  font-family: "Lexend", sans-serif;
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--bg-dark);
   font-family: Lexend, sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
 }
 
 .important-text {
   color: var(--text);
+  font-weight: 700;
 }
 
 .muted-text {
   color: var(--text-muted);
+}
+
+header {
+  min-height: 75px;
+}
+
+header,
+main,
+footer {
+  background-color: var(--bg);
+  border: 1px solid var(--border-muted);
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 28px;
 }
