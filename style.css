@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --bg-dark: hsl(17 49% 1%);
+  --bg: hsl(20 32% 4%);
+  --bg-light: hsl(21 18% 9%);
+  --text: hsl(21 90% 95%);
+  --text-muted: hsl(21 14% 69%);
+  --highlight: hsl(21 10% 39%);
+  --border: hsl(21 13% 28%);
+  --border-muted: hsl(21 19% 18%);
+  --primary: hsl(22 68% 68%);
+  --secondary: hsl(199 70% 65%);
+  --danger: hsl(9 26% 64%);
+  --warning: hsl(52 19% 57%);
+  --success: hsl(146 17% 59%);
+  --info: hsl(217 28% 65%);
+}
+
+body {
+  background-color: var(--bg-dark);
+  font-family: Lexend, sans-serif;
+}
+
+.important-text {
+  color: var(--text);
+}
+
+.muted-text {
+  color: var(--text-muted);
+}
