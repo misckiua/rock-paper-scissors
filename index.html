@@ -12,29 +12,33 @@
 
   <main>
     <div class="winner-display">
-      <h2 class="winner-display-text important-text">Rock, Paper, or Scissors?</h2>
-      <h3 class="reason-display muted-text">First to 5 wins the game!</h3>
+      <h2 class="important-text" id="winner-info">Rock, Paper, or Scissors?</h2>
+      <h3 class="muted-text" id="winner-msg">First to 5 wins the game!</h3>
     </div>
 
     <div class="result-boxes">
 
       <div class="human-results">
-        <div class="human-result-box muted-text">?</div>
-        <p class="human-score muted-text">You: 0</p>
+        <div class="muted-text" id="human-choice-display">?</div>
+        <p class="muted-text" id="human-score">You: 0</p>
       </div>
 
       <div class="computer-results">
-        <div class="computer-result-box muted-text">?</div>
-        <p class=""></p>
+        <div class="muted-text" id="computer-choice-display">?</div>
+        <p class="muted-text" id="computer-score">Computer: 0</p>
       </div>
 
     </div>
 
-    <div class="choices">
-      <button class="choice-button rock-button">&#9994;</button>
-      <button class="choice-button paper-button">&#9995;</button>
-      <button class="choice-button scissors-button">&#9996;</button>
+    <div class="buttons">
+      <button class="btn" id="rock-btn">&#9994;</button>
+      <button class="btn" id="paper-btn">&#9995;</button>
+      <button class="btn" id="scissors-btn">&#9996;</button>
     </div>
   </main>
+
+  <footer class="muted-text">
+    &#169; 2025 Michael Odipo. All rights reserved.
+  </footer>
 </body>
 </html>
