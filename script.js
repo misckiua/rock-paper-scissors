@@ -13,16 +13,19 @@ const computerScoreDisplay = document.querySelector("#computer-score");
 const winnerOfRoundDisplay = document.querySelector("#winner-info");
 const reasonOfWinDisplay = document.querySelector("#winner-msg");
 
+reasonOfWinDisplay.textContent = `First to ${MAX_POINTS} wins the game!`;
+
 const modal = document.querySelector("#modal-container");
 const retryModalButton = modal.querySelector("#retry-modal-button");
-
-reasonOfWinDisplay.textContent = `First to ${MAX_POINTS} wins the game!`;
+const endGameWinnerDisplay = modal.querySelector("#end-game-winner");
+const endGameMessage = modal.querySelector("#end-game-msg");
 
 let humanScore = 0, computerScore = 0;
 let isGameOver = false;
 
 retryModalButton.addEventListener("click", () => {
-  modal.classList.remove("active");
+  showModal(false);
+  initializer();
 });
 
 buttons.addEventListener("click", (event) => {
@@ -35,6 +38,41 @@ buttons.addEventListener("click", (event) => {
   }
 });
 
+function initializer() {
+  isGameOver = false;
+  humanScore = 0;
+  computerScore = 0;
+
+  winnerOfRoundDisplay.textContent = "Choose your weapon..";
+  reasonOfWinDisplay.textContent = `First to ${MAX_POINTS} wins the game!`;
+  
+  humanChoiceDisplay.textContent = "?";
+  computerChoiceDisplay.textContent = "?";
+  humanChoiceDisplay.style.fontSize = "115px";
+  computerChoiceDisplay.style.fontSize = "115px";
+
+  humanScoreDisplay.textContent = `You: ${humanScore}`;
+  computerScoreDisplay.textContent = `Computer: ${computerScore}`;
+}
+
+function showModal(boolean, winner) {
+  if (boolean) {
+    modal.classList.add("active");
+
+    if (winner === "human") {
+      modal.classList.add("win");
+      endGameWinnerDisplay.textContent = "You win!";
+      endGameMessage.textContent = "Nice one! Play again?";
+    } else {
+      modal.classList.add("lose");
+      endGameWinnerDisplay.textContent = "You lost..";
+      endGameMessage.textContent = "Better luck next time.."
+    }
+
+  } else {
+    modal.classList.remove("active", "win", "lose");
+  }
+}
 
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -126,7 +164,7 @@ function playRound(humanChoice, computerChoice) {
 
   if (humanScore >= MAX_POINTS || computerScore >= MAX_POINTS) {
     isGameOver = true;
-    modal.classList.add("active");
+    showModal(true, (humanScore > computerScore) ? "human" : "computer");
   }
 }
 
