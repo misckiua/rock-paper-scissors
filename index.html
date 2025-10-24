@@ -14,7 +14,9 @@
   <main>
     <div class="winner-display">
       <h2 class="important-text" id="winner-info">Choose your weapon..</h2>
-      <h3 class="muted-text" id="winner-msg">First to 5 wins the game!</h3>
+      <h3 class="muted-text" id="winner-msg">
+        First to <span class="max-points-display red-text">null (something went wrong)</span> wins the game!
+      </h3>
     </div>
 
     <div class="result-boxes">
@@ -32,14 +34,22 @@
     </div>
 
     <div class="buttons" id="buttons">
-      <button class="btn" id="rock">&#9994;</button>
-      <button class="btn" id="paper">&#9995;</button>
-      <button class="btn" id="scissors">&#9996;</button>
+      <button class="btn" id="rock">✊</button>
+      <button class="btn" id="paper">✋</button>
+      <button class="btn" id="scissors">✌️</button>
     </div>
   </main>
 
   <footer class="muted-text">
     <p>&#169; 2025 Michael Odipo. All rights reserved.</p>
   </footer>
+  
+  <div class="modal-container" id="modal-container">
+    <div class="modal">
+      <h1 class="end-game-winner" id="end-game-winner">You lost..</h1>
+      <p>Better luck next time..</p>
+      <button id="retry-modal-button">Retry</button>
+    </div>
+  </div>
 </body>
 </html>
